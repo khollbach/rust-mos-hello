@@ -12,3 +12,8 @@ pub extern "C" fn factorial(n: u16) -> u16 {
 pub extern "C" fn factorial2(n: u16) -> u16 {
   (1..n+1).fold(1u16, |acc, v| acc * v)
 }
+
+#[no_mangle]
+pub extern "C" fn factorial3(n: u16) -> u16 {
+  (1..=n).product()
+}
